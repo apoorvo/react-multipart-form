@@ -1,6 +1,8 @@
+import { Field } from "formik";
 import React from "react";
+import CustomField from "../common/CustomField";
 
-const WelcomeForm = ({ nextStep }) => {
+const WelcomeForm = () => {
   return (
     <>
       <div className="flex flex-col space-y-4 w-full items-center">
@@ -13,23 +15,25 @@ const WelcomeForm = ({ nextStep }) => {
       <div className="flex w-5/6 m-auto flex-col space-y-6 items-center">
         <div className="flex w-full  space-y-2 flex-col">
           <label className="text-lg">Full Name</label>
-          <input
-            className="p-4 rounded border border-gray-300"
+          <CustomField
+            className="p-4 rounded border "
             type="text"
             placeholder="Steve Jobs"
+            name="name"
           />
         </div>
         <div className="flex w-full space-y-2 flex-col">
           <label className="text-lg">Display Name</label>
-          <input
+          <CustomField
             type="text"
             className="p-4 rounded border border-gray-300"
             placeholder="Steve"
+            name="displayName"
           />
         </div>
 
         <button
-          onClick={() => nextStep()}
+          type="submit"
           className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
         >
           Create Workspace

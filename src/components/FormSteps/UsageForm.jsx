@@ -1,6 +1,16 @@
+import { Field, useFormikContext } from "formik";
 import React from "react";
+import CustomField from "../common/CustomField";
 
-const UsageForm = ({ nextStep }) => {
+const UsageForm = () => {
+  const {
+    values: { usage },
+    setFieldValue,
+  } = useFormikContext();
+  const handleUsageClick = (usageName) => {
+    setFieldValue("usage", usageName);
+  };
+
   return (
     <>
       <div className="flex flex-col space-y-4 w-full items-center">
@@ -13,20 +23,27 @@ const UsageForm = ({ nextStep }) => {
       </div>
       <div className="flex w-full space-y-2 items-center justify-center space-x-8 ">
         <OptionCard
-          highlighted={true}
+          highlighted={usage === "self"}
           icon={"ri-user-fill"}
           title={"For myself"}
+          name={"self"}
           body={"Write better. Think more clearly. Stay organized."}
+          handleUsageClick={handleUsageClick}
         />
         <OptionCard
           icon={"ri-team-fill"}
           title={"For Team"}
+          highlighted={usage === "team"}
+          name={"team"}
           body={"Wikis, docs, tasks & projects, all in one place."}
+          handleUsageClick={handleUsageClick}
         />
       </div>
-      <div className="flex w-4/6 m-auto flex-col space-y-6 items-center">
+      <CustomField type="hidden" name="usage" />
+
+      <div className="flex w-4/6 m-auto mt-8 flex-col space-y-6 items-center">
         <button
-          onClick={() => nextStep()}
+          type="submit"
           className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
         >
           Create Workspace
@@ -36,14 +53,22 @@ const UsageForm = ({ nextStep }) => {
   );
 };
 
-const OptionCard = ({ highlighted, icon, title, body }) => {
+const OptionCard = ({
+  highlighted,
+  icon,
+  title,
+  body,
+  name,
+  handleUsageClick,
+}) => {
   return (
     <div
-      className={`w-40 space-y-2 h-fit p-6 text-xl rounded-lg my-4 ${
+      className={`w-40 space-y-2 h-fit p-6 text-xl cursor-pointer rounded-lg my-4 ${
         highlighted
           ? " border-purple-primary border-2"
           : "border-gray-300 border"
       }`}
+      onClick={() => handleUsageClick(name)}
     >
       <i className={`${icon} ${highlighted && "text-purple-primary"} `}></i>
       <h3>{title}</h3>

@@ -1,8 +1,17 @@
 import React from "react";
 
-const Tab = ({ page, completed = false, first = false, last = false }) => {
+const Tab = ({
+  page,
+  completed = false,
+  first = false,
+  last = false,
+  handleClick,
+}) => {
   return (
-    <div className="flex w-full items-center">
+    <div
+      className="flex w-full cursor-pointer items-center"
+      onClick={() => handleClick(page - 1)}
+    >
       {!first && (
         <div
           className={`w-full h-0 ${

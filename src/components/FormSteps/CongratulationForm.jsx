@@ -1,12 +1,16 @@
+import { useFormikContext } from "formik";
 import React from "react";
 
 const CongratulationForm = () => {
+  const {
+    values: { displayName },
+  } = useFormikContext();
   return (
     <>
       <div className="flex flex-col space-y-10 w-full pt-12 items-center">
         <i className="ri-check-line text-5xl rounded-full p-4  bg-purple-primary  text-white"></i>
         <h1 className="font-bold text-center text-5xl text-gray-primary">
-          Congratulations, Eren!
+          {`Congratulations, ${displayName}!`}
         </h1>
         <p className="text-gray-500">
           You have completed onboarding, you can start using the Eden!
@@ -18,7 +22,7 @@ const CongratulationForm = () => {
           onClick={() => {}}
           className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
         >
-          Create Workspace
+          Launch Workspace
         </button>
       </div>
     </>
