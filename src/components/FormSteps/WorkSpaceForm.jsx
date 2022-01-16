@@ -1,6 +1,6 @@
-import { Field, useFormikContext } from "formik";
+import { Field } from "formik";
 import React from "react";
-import Input from "../common/Input";
+import CustomField from "../common/CustomField";
 
 const WorkSpaceForm = () => {
   return (
@@ -17,18 +17,31 @@ const WorkSpaceForm = () => {
       <div className="flex w-5/6 m-auto flex-col space-y-6 items-center">
         <div className="flex w-full  space-y-2 flex-col">
           <label className="text-lg">Workspace Name</label>
-          <Field
-            className="p-4 rounded border border-gray-300"
-            type="text"
-            placeholder="Eden"
-            name="workspace"
-          />
+          <Field name="workspace">
+            {({ field, form: { touched, errors } }) => (
+              <>
+                <input
+                  {...field}
+                  type="text"
+                  placeholder="Eden"
+                  className={`p-4 rounded border w-full ${
+                    touched[field.name] && errors[field.name]
+                      ? "border-red-400 "
+                      : "border-gray-300 "
+                  } `}
+                />
+                {touched[field.name] && errors[field.name] && (
+                  <div className="text-red-500">* {errors[field.name]}</div>
+                )}
+              </>
+            )}
+          </Field>
         </div>
         <div className="flex w-full space-y-2 flex-col">
           <label className="text-lg">
             Workspace Url <span className="text-gray-300">(optional)</span>
           </label>
-          <Input
+          <CustomField
             type="text"
             prefix={"www.eden.com/"}
             className="p-4 "

@@ -17,7 +17,6 @@ const Timeline = ({ step, setStep }) => {
       />
     );
   });
-  console.log(timelineArray);
 
   return <div className="flex w-full items-center">{timelineArray}</div>;
 };

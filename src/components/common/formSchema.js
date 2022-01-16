@@ -2,14 +2,16 @@ import * as Yup from "yup";
 
 export const stepFormSchema = [
   {
-    name: Yup.string().required(),
-    displayName: Yup.string().required(),
+    name: Yup.string().label("Name").required(),
+    displayName: Yup.string().label("Display name").required(),
   },
   {
-    workspace: Yup.string().required(),
+    workspace: Yup.string().label("Workspace").required(),
     workspaceUrl: Yup.string(),
   },
   {
-    usage: Yup.string().oneOf(["self", "team"]).required(),
+    usage: Yup.string()
+      .oneOf(["self", "team"])
+      .required("Please select one of the options."),
   },
 ];

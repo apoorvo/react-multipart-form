@@ -1,5 +1,6 @@
 import { Field } from "formik";
 import React from "react";
+import CustomField from "../common/CustomField";
 
 const WelcomeForm = () => {
   return (
@@ -14,8 +15,8 @@ const WelcomeForm = () => {
       <div className="flex w-5/6 m-auto flex-col space-y-6 items-center">
         <div className="flex w-full  space-y-2 flex-col">
           <label className="text-lg">Full Name</label>
-          <Field
-            className="p-4 rounded border border-gray-300"
+          <CustomField
+            className="p-4 rounded border "
             type="text"
             placeholder="Steve Jobs"
             name="name"
@@ -23,7 +24,7 @@ const WelcomeForm = () => {
         </div>
         <div className="flex w-full space-y-2 flex-col">
           <label className="text-lg">Display Name</label>
-          <Field
+          <CustomField
             type="text"
             className="p-4 rounded border border-gray-300"
             placeholder="Steve"

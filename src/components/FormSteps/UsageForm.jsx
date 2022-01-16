@@ -1,5 +1,6 @@
 import { Field, useFormikContext } from "formik";
 import React from "react";
+import CustomField from "../common/CustomField";
 
 const UsageForm = () => {
   const {
@@ -21,7 +22,6 @@ const UsageForm = () => {
         </p>
       </div>
       <div className="flex w-full space-y-2 items-center justify-center space-x-8 ">
-        <Field type="hidden" name="usage" />
         <OptionCard
           highlighted={usage === "self"}
           icon={"ri-user-fill"}
@@ -39,6 +39,8 @@ const UsageForm = () => {
           handleUsageClick={handleUsageClick}
         />
       </div>
+      <CustomField type="hidden" name="usage" />
+
       <div className="flex w-4/6 m-auto mt-8 flex-col space-y-6 items-center">
         <button
           type="submit"
