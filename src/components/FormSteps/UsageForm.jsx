@@ -23,17 +23,17 @@ const UsageForm = () => {
       <div className="flex w-full space-y-2 items-center justify-center space-x-8 ">
         <Field type="hidden" name="usage" />
         <OptionCard
-          highlighted={usage == "myself"}
+          highlighted={usage === "self"}
           icon={"ri-user-fill"}
           title={"For myself"}
-          name={"myself"}
+          name={"self"}
           body={"Write better. Think more clearly. Stay organized."}
           handleUsageClick={handleUsageClick}
         />
         <OptionCard
           icon={"ri-team-fill"}
           title={"For Team"}
-          highlighted={usage == "team"}
+          highlighted={usage === "team"}
           name={"team"}
           body={"Wikis, docs, tasks & projects, all in one place."}
           handleUsageClick={handleUsageClick}

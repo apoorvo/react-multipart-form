@@ -1,7 +1,7 @@
 import { Field } from "formik";
 import React from "react";
 
-const WelcomeForm = ({ nextStep }) => {
+const WelcomeForm = () => {
   return (
     <>
       <div className="flex flex-col space-y-4 w-full items-center">
