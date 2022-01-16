@@ -1,5 +1,6 @@
+import { Field } from "formik";
 import React from "react";
-import Input from "../common/Input";
+import Input from "../../common/Input";
 
 const WorkSpaceForm = ({ nextStep }) => {
   return (
@@ -16,19 +17,23 @@ const WorkSpaceForm = ({ nextStep }) => {
       <div className="flex w-5/6 m-auto flex-col space-y-6 items-center">
         <div className="flex w-full  space-y-2 flex-col">
           <label className="text-lg">Workspace Name</label>
-          <input
+          <Field
             className="p-4 rounded border border-gray-300"
             type="text"
             placeholder="Eden"
+            name="workspace"
           />
         </div>
         <div className="flex w-full space-y-2 flex-col">
-          <label className="text-lg">Workspace Url</label>
+          <label className="text-lg">
+            Workspace Url <span className="text-gray-300">(optional)</span>
+          </label>
           <Input
             type="text"
             prefix={"www.eden.com/"}
             className="p-4 "
             placeholder="Example"
+            name="workspaceUrl"
           />
         </div>
 

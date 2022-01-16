@@ -1,10 +1,11 @@
+import { Field } from "formik";
 import React from "react";
 
 const Input = ({ prefix = "", className, ...inputProps }) => {
   return (
     <div className="flex rounded border border-gray-300">
       {prefix && <Prefix prefix={prefix} />}
-      <input {...inputProps} className={`flex-grow ${className}`} />
+      <Field {...inputProps} className={`flex-grow ${className}`} />
     </div>
   );
 };

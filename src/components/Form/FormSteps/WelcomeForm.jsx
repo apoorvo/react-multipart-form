@@ -1,3 +1,4 @@
+import { Field } from "formik";
 import React from "react";
 
 const WelcomeForm = ({ nextStep }) => {
@@ -13,18 +14,20 @@ const WelcomeForm = ({ nextStep }) => {
       <div className="flex w-5/6 m-auto flex-col space-y-6 items-center">
         <div className="flex w-full  space-y-2 flex-col">
           <label className="text-lg">Full Name</label>
-          <input
+          <Field
             className="p-4 rounded border border-gray-300"
             type="text"
             placeholder="Steve Jobs"
+            name="name"
           />
         </div>
         <div className="flex w-full space-y-2 flex-col">
           <label className="text-lg">Display Name</label>
-          <input
+          <Field
             type="text"
             className="p-4 rounded border border-gray-300"
             placeholder="Steve"
+            name="displayName"
           />
         </div>
 

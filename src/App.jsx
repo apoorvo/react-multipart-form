@@ -19,7 +19,7 @@ function App() {
           <h1 className="text-4xl font-bold">Eden</h1>
         </div>
         <div className="flex justify-center w-4/5 m-auto">
-          <Timeline step={step} />
+          <Timeline step={step} setStep={setStep} />
         </div>
         <Form step={step} nextStep={nextStep} />
       </div>

@@ -18,7 +18,7 @@ const CongratulationForm = () => {
           onClick={() => {}}
           className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
         >
-          Create Workspace
+          Launch Workspace
         </button>
       </div>
     </>
