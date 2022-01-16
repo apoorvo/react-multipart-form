@@ -32,7 +32,7 @@ const WelcomeForm = ({ nextStep }) => {
         </div>
 
         <button
-          onClick={() => nextStep()}
+          type="submit"
           className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
         >
           Create Workspace

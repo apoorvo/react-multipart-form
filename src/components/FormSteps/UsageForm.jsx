@@ -1,7 +1,7 @@
 import { Field, useFormikContext } from "formik";
 import React from "react";
 
-const UsageForm = ({ nextStep }) => {
+const UsageForm = () => {
   const {
     values: { usage },
     setFieldValue,
@@ -41,7 +41,7 @@ const UsageForm = ({ nextStep }) => {
       </div>
       <div className="flex w-4/6 m-auto mt-8 flex-col space-y-6 items-center">
         <button
-          onClick={() => nextStep()}
+          type="submit"
           className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
         >
           Create Workspace

@@ -1,8 +1,8 @@
 import { Field } from "formik";
 import React from "react";
-import Input from "../../common/Input";
+import Input from "../common/Input";
 
-const WorkSpaceForm = ({ nextStep }) => {
+const WorkSpaceForm = () => {
   return (
     <>
       <div className="flex flex-col space-y-4 w-full items-center">
@@ -38,7 +38,7 @@ const WorkSpaceForm = ({ nextStep }) => {
         </div>
 
         <button
-          onClick={() => nextStep()}
+          type="submit"
           className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
         >
           Create Workspace
