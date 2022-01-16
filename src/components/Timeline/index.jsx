@@ -1,15 +1,22 @@
 import React from "react";
+import { MAX_STEP } from "../common/constants";
 import Tab from "./Tab";
 
-const Timeline = () => {
-  return (
-    <div className="flex w-full items-center">
-      <Tab page={1} completed={true} first={true} size="lg" />
-      <Tab page={2} completed={false} size="3xl" />
-      <Tab page={3} completed={false} size="3xl" />
-      <Tab page={4} completed={false} last={true} size="3xl" />
-    </div>
-  );
+const Timeline = ({ step }) => {
+  const timelineArray = [...new Array(MAX_STEP)].map((_, index) => {
+    return (
+      <Tab
+        key={index}
+        page={index + 1}
+        completed={index <= step}
+        first={index == 0}
+        last={index == MAX_STEP - 1}
+      />
+    );
+  });
+  console.log(timelineArray);
+
+  return <div className="flex w-full items-center">{timelineArray}</div>;
 };
 
 export default Timeline;

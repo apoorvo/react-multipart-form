@@ -5,8 +5,8 @@ const Tab = ({ page, completed = false, first = false, last = false }) => {
     <div className="flex w-full items-center">
       {!first && (
         <div
-          className={`w-full h-0 border-b-${
-            completed ? "purple-primary" : "gray-400"
+          className={`w-full h-0 ${
+            completed ? "border-b-purple-primary " : "border-b-gray-400 "
           } border-b-2 `}
         ></div>
       )}
@@ -21,8 +21,8 @@ const Tab = ({ page, completed = false, first = false, last = false }) => {
       </div>
       {!last && (
         <div
-          className={`w-full h-0 border-b-${
-            completed ? "purple-primary" : "gray-400"
+          className={`w-full h-0 ${
+            completed ? "border-b-purple-primary " : "border-b-gray-400 "
           } border-b-2 `}
         ></div>
       )}
