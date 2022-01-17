@@ -6,12 +6,12 @@ const CustomField = ({ prefix = "", className, name, ...inputProps }) => {
     <Field name={name}>
       {({ field, form: { touched, errors } }) => (
         <div className=" rounded">
-          <div className={`flex w-full ${prefix && "border"}`}>
+          <div className={`flex  w-full ${prefix && "border"}`}>
             {prefix && <Prefix prefix={prefix} />}
             <input
               {...field}
               {...inputProps}
-              className={`flex-grow ${className} ${
+              className={`flex-grow min-w-0 ${className} ${
                 touched[field.name] && errors[field.name]
                   ? "border-red-400 "
                   : "border-gray-300 "

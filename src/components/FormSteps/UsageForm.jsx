@@ -1,6 +1,7 @@
-import { Field, useFormikContext } from "formik";
+import { useFormikContext } from "formik";
 import React from "react";
-import CustomField from "../common/CustomField";
+import CustomField from "./common/CustomField";
+import FormWidget from "./common/FormWidget";
 
 const UsageForm = () => {
   const {
@@ -12,44 +13,33 @@ const UsageForm = () => {
   };
 
   return (
-    <>
-      <div className="flex flex-col space-y-4 w-full items-center">
-        <h1 className="font-bold text-center  text-5xl text-gray-primary">
-          How are you planning to use Eden?
-        </h1>
-        <p className="text-gray-500">
-          We'll streamline your setup experience accordingly.
-        </p>
-      </div>
-      <div className="flex w-full space-y-2 items-center justify-center space-x-8 ">
-        <OptionCard
-          highlighted={usage === "self"}
-          icon={"ri-user-fill"}
-          title={"For myself"}
-          name={"self"}
-          body={"Write better. Think more clearly. Stay organized."}
-          handleUsageClick={handleUsageClick}
-        />
-        <OptionCard
-          icon={"ri-team-fill"}
-          title={"For Team"}
-          highlighted={usage === "team"}
-          name={"team"}
-          body={"Wikis, docs, tasks & projects, all in one place."}
-          handleUsageClick={handleUsageClick}
-        />
-      </div>
-      <CustomField type="hidden" name="usage" />
-
-      <div className="flex w-4/6 m-auto mt-8 flex-col space-y-6 items-center">
-        <button
-          type="submit"
-          className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
-        >
-          Create Workspace
-        </button>
-      </div>
-    </>
+    <FormWidget>
+      <FormWidget.Header
+        title={"How are you planning to use Eden?"}
+        subtitle={"We'll streamline your setup experience accordingly."}
+      />
+      <FormWidget.Body buttonText={"Create Workspace"}>
+        <div className="flex flex-col w-full items-center  justify-center md:justify-between md:space-x-8 md:flex-row ">
+          <OptionCard
+            highlighted={usage === "self"}
+            icon={"ri-user-fill"}
+            title={"For myself"}
+            name={"self"}
+            body={"Write better. Think more clearly. Stay organized."}
+            handleUsageClick={handleUsageClick}
+          />
+          <OptionCard
+            icon={"ri-team-fill"}
+            title={"For Team"}
+            highlighted={usage === "team"}
+            name={"team"}
+            body={"Wikis, docs, tasks & projects, all in one place."}
+            handleUsageClick={handleUsageClick}
+          />
+        </div>
+        <CustomField type="hidden" name="usage" />
+      </FormWidget.Body>
+    </FormWidget>
   );
 };
 
@@ -63,7 +53,7 @@ const OptionCard = ({
 }) => {
   return (
     <div
-      className={`w-40 space-y-2 h-fit p-6 text-xl cursor-pointer rounded-lg my-4 ${
+      className={`md:w-60 md:py-8 w-full space-y-2 h-fit p-6 text-xl cursor-pointer rounded-lg mt-3 ${
         highlighted
           ? " border-purple-primary border-2"
           : "border-gray-300 border"

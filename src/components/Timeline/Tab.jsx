@@ -9,18 +9,18 @@ const Tab = ({
 }) => {
   return (
     <div
-      className="flex w-full cursor-pointer items-center"
+      className="flex w-full cursor-pointer justify-center items-center"
       onClick={() => handleClick(page - 1)}
     >
       {!first && (
         <div
-          className={`w-full h-0 ${
+          className={`md:w-10 w-3 h-0 ${
             completed ? "border-b-purple-primary " : "border-b-gray-400 "
           } border-b-2 `}
         ></div>
       )}
       <div
-        className={`flex px-6 rounded-full py-4 ${
+        className={`flex px-4 rounded-full py-2 ${
           completed
             ? "bg-purple-primary text-white"
             : "bg-white border-gray-300 border text-gray-primary"
@@ -30,7 +30,7 @@ const Tab = ({
       </div>
       {!last && (
         <div
-          className={`w-full h-0 ${
+          className={`md:w-10 w-3 h-0 ${
             completed ? "border-b-purple-primary " : "border-b-gray-400 "
           } border-b-2 `}
         ></div>

@@ -7,6 +7,9 @@ module.exports = {
         "gray-primary": "#151B28",
         "gray-secondary": "#F8F9FC",
       },
+      spacing: {
+        50: "80px",
+      },
     },
   },
   plugins: [],

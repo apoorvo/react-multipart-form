@@ -18,7 +18,11 @@ const Timeline = ({ step, setStep }) => {
     );
   });
 
-  return <div className="flex w-full items-center">{timelineArray}</div>;
+  return (
+    <div className="flex w-full justify-center md:pt-0 pt-10 items-center">
+      {timelineArray}
+    </div>
+  );
 };
 
 export default Timeline;
