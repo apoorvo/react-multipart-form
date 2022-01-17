@@ -20,7 +20,7 @@ const Header = ({ title, subtitle, icon }) => {
 
 const Body = ({ buttonText, children }) => {
   return (
-    <div className="flex md:w-4/6 w-10/12 px-2 self-end m-auto flex-col md:space-y-6 space-y-4 items-center">
+    <div className="flex md:w-4/6 2xl:w-3/6 w-10/12 px-2 self-end m-auto flex-col md:space-y-6 space-y-4 items-center">
       {children}
       <button
         type="submit"

@@ -21,7 +21,7 @@ const UsageForm = () => {
         subtitle={"We'll streamline your setup experience accordingly."}
       />
       <FormWidget.Body buttonText={"Create Workspace"}>
-        <div className="flex flex-col w-full items-center  justify-center md:justify-between md:space-x-8 md:flex-row ">
+        <div className="flex flex-col w-full items-center 2xl:justify-center justify-center md:justify-between md:space-x-8 md:flex-row ">
           <OptionCard
             highlighted={usage === "self"}
             icon={"ri-user-fill"}
