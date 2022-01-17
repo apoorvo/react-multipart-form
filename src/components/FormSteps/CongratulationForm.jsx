@@ -1,31 +1,25 @@
 import { useFormikContext } from "formik";
 import React from "react";
+import FormWidget from "./common/FormWidget";
 
 const CongratulationForm = () => {
   const {
     values: { displayName },
   } = useFormikContext();
   return (
-    <>
-      <div className="flex flex-col space-y-10 w-full pt-12 items-center">
-        <i className="ri-check-line text-5xl rounded-full p-4  bg-purple-primary  text-white"></i>
-        <h1 className="font-bold text-center text-5xl text-gray-primary">
-          {`Congratulations, ${displayName}!`}
-        </h1>
-        <p className="text-gray-500">
-          You have completed onboarding, you can start using the Eden!
-        </p>
-      </div>
+    <FormWidget>
+      <FormWidget.Header
+        title={`Congratulations, ${displayName}!`}
+        subtitle={
+          "You have completed onboarding, you can start using the Eden!"
+        }
+        icon={
+          <i className="ri-check-line text-5xl rounded-full p-4 md:mt-0 mt-20 bg-purple-primary  text-white"></i>
+        }
+      />
 
-      <div className="flex w-4/6 m-auto mt-6 flex-col space-y-6 items-center">
-        <button
-          onClick={() => {}}
-          className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
-        >
-          Launch Workspace
-        </button>
-      </div>
-    </>
+      <FormWidget.Body buttonText={"Launch Workspace"} />
+    </FormWidget>
   );
 };
 

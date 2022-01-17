@@ -1,18 +1,16 @@
-import { Field } from "formik";
 import React from "react";
-import CustomField from "../common/CustomField";
+import CustomField from "./common/CustomField";
+import FormWidget from "./common/FormWidget";
 
 const WelcomeForm = () => {
   return (
-    <>
-      <div className="flex flex-col space-y-4 w-full items-center">
-        <h1 className="font-bold text-center  text-5xl text-gray-primary">
-          Welcome! First things first...
-        </h1>
-        <p className="text-gray-500">You can always change them later.</p>
-      </div>
+    <FormWidget>
+      <FormWidget.Header
+        title="Welcome! First things first..."
+        subtitle="You can always change them later."
+      />
 
-      <div className="flex w-5/6 m-auto flex-col space-y-6 items-center">
+      <FormWidget.Body buttonText={"Create Workspace"}>
         <div className="flex w-full  space-y-2 flex-col">
           <label className="text-lg">Full Name</label>
           <CustomField
@@ -31,15 +29,8 @@ const WelcomeForm = () => {
             name="displayName"
           />
         </div>
-
-        <button
-          type="submit"
-          className="px-4 text-xl w-full flex-grow bg-purple-primary text-white rounded py-2"
-        >
-          Create Workspace
-        </button>
-      </div>
-    </>
+      </FormWidget.Body>
+    </FormWidget>
   );
 };
 
