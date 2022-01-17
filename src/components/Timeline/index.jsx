@@ -1,4 +1,5 @@
 import React from "react";
+
 import { MAX_STEP } from "../common/constants";
 import Tab from "./Tab";
 
