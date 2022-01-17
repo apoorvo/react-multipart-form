@@ -10,9 +10,6 @@ module.exports = {
       spacing: {
         50: "80px",
       },
-      fontFamily: {
-        inter: ["Inter", "sans-serif"],
-      },
     },
   },
   plugins: [],

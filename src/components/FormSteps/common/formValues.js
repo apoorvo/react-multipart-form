@@ -4,4 +4,5 @@ export const initialValues = {
   workspace: "",
   workspaceUrl: "",
   usage: "",
+  step: 0,
 };
