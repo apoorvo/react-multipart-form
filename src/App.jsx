@@ -28,7 +28,7 @@ function App() {
           setStep((step) => step + 1);
         } else {
           //Todo: Add function to submit to server
-          console.log(values);
+          console.log("Values: "+values);
         }
       }}
     >
